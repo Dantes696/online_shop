@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block header_poster %}
+
+{% endblock header_poster %}
+{% block main %}
+
+<div class="container d-flex justify-content-center p-2" style="color: white; margin-top: -50px;">
+    <div class="col-4">
+        <header class="mb-1 mt-1">
+            <h3 class="text-center">
+                Вход
+            </h3>
+        </header>
+        <div class="card-body">
+            <form action="" method="post" enctype="multipart/form-data"
+                style="color: black;">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-between mb-3">
+                    <button class="btn btn-primary" type="submit" style="color: brown;">
+                        <b class="text-dark">Войти</b>
+                    </button>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">
+                        Нет аккаунта ?
+                        <a href="{% url 'register' %}" class="navbar-brand d-flex align-items-center" style="color: red;">
+                            Зарегистрироваться
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
